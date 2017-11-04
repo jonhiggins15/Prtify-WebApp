@@ -4,14 +4,18 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var isAnonymous = user.isAnonymous;
     uid = user.uid;
-
+    json = getJson();
+    for(var u in json.users){
+      if(u == uid){
+        window.location.assign(main.html);
+      }
+    }
   } else {
     //signed out
   }
 });
 
 function buttonClick(){
-  alert("buttonClick");
   var party = $("#partyName").val();
   var json = getJson();
   var partyExists = false;
@@ -20,7 +24,11 @@ function buttonClick(){
       firebase.database().ref("parties/"+party+"/users/"+uid).update({
         uid: uid
       });
-      alert("joining "+party);
+      firebase.database().ref("users/"+uid).update({
+        uid: uid,
+        party: party
+      });
+      window.location.assign(main.html);
     }
   }
   $("#invalidParty").show();
