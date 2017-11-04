@@ -1,5 +1,6 @@
 var ref = firebase.database().ref("/rooms");
 var uid;
+var database = firebase.database();
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var isAnonymous = user.isAnonymous;
@@ -7,13 +8,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     json = getJson();
     for(var u in json.users){
       if(u == uid){
-        window.location.assign(main.html);
+        //window.location.assign('main.html');
       }
     }
   } else {
     //signed out
   }
 });
+
 
 function buttonClick(){
   var party = $("#partyName").val();
