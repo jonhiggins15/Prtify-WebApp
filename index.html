@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head ng-app= "main">
   <title>Partify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="viewport" type="text/css" href="theme.css">
@@ -13,11 +13,14 @@
 </head>
 <body>
   <header>
-    <div ng-app"" id="heading">
+    <div ng-controller="heading" id="heading">
 
     </div>
-
   </header>
+
+  <li ng-repeat="songs in queue"id="queue">
+
+  </li>
 
 </body>
 
