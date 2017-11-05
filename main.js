@@ -28,14 +28,89 @@ setTimeout(function(){
       info[song].total = info[song].upvotes - info[song].downvotes;
       songList.push(info[song]);
     }
-    console.log(songList);
     songList.sort();
     songList.sort(function(a, b){
       return b.total - a.total;
     });
-    console.log(songList);
+    $("#queue").empty();
+    for(var n in songList){
+      $("#queue").append('<li><p>'+songList[n].name+'</p><p>'+songList[n].artist+'</p><p>'+songList[n].image+'</p><button value="'+songList[n].name+'" onclick="upvote(this.value)">Upvote</button><button value="'+songList[n].name+'" onclick="downvote(this.value)">Downvote</button></li>');
+    }
   });
 }, 500);
+
+function upvote(song){
+  var json = getJson();
+  var downvotes = json.parties[party].queue[song].downvotes - 1;
+  var upvotes = json.parties[party].queue[song].upvotes + 1;
+  var alreadyVoted = false;
+  for(u in json.parties[party].queue[song].upvoted){
+    if(json.parties[party].queue[song].upvoted[u].uid == uid){
+      alreadyVoted = true;
+    }
+  }
+  for(u in json.parties[party].queue[song].downvoted){
+    if(json.parties[party].queue[song].downvoted[u].uid == uid){
+      alreadyVoted = true;
+      firebase.database().ref("parties/"+party+"/queue/"+song).update({
+        downvotes: downvotes
+      });
+      firebase.database().ref("parties/"+party+"/queue/"+song+"/downvoted/"+uid).remove()
+        .then(function() {
+          console.log("sucess");
+        })
+        .catch(function(error) {
+          console.log("Remove failed: " + error.message)
+        });
+        alreadyVoted = false;
+    }
+  }
+  if(!alreadyVoted){
+    firebase.database().ref("parties/"+party+"/queue/"+song).update({
+      upvotes: upvotes
+    });
+    firebase.database().ref("parties/"+party+"/queue/"+song+"/upvoted/"+uid).update({
+      uid: uid
+    });
+  }
+
+}
+
+function downvote(song){
+  var json = getJson();
+  var downvotes = json.parties[party].queue[song].downvotes + 1;
+  var upvotes = json.parties[party].queue[song].upvotes - 1;
+  var alreadyVoted = false;
+  for(u in json.parties[party].queue[song].downvoted){
+    if(json.parties[party].queue[song].downvoted[u].uid == uid){
+      alreadyVoted = true;
+    }
+  }
+  for(u in json.parties[party].queue[song].upvoted){
+    if(json.parties[party].queue[song].upvoted[u].uid == uid){
+      alreadyVoted = true;
+      firebase.database().ref("parties/"+party+"/queue/"+song).update({
+        upvotes: upvotes
+      });
+      firebase.database().ref("parties/"+party+"/queue/"+song+"/upvoted/"+uid).remove()
+        .then(function() {
+          console.log("sucess");
+        })
+        .catch(function(error) {
+          console.log("Remove failed: " + error.message)
+        });
+        alreadyVoted = false;
+    }
+  }
+  if(!alreadyVoted){
+    firebase.database().ref("parties/"+party+"/queue/"+song).update({
+      downvotes: downvotes
+    });
+    firebase.database().ref("parties/"+party+"/queue/"+song+"/downvoted/"+uid).update({
+      uid: uid
+    });
+  }
+}
 
 
 
