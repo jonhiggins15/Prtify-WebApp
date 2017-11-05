@@ -26,9 +26,9 @@
   <nav class="teal accent-4 hide-on-med-and-down">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><i class="material-icons">stars</i>Prtify</a>
-      <ul class="right hide-on-med-and-down">
+      <!-- <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Leave Party</a></li>
-      </ul>
+      </ul> -->
     </div>
   </nav>
 
@@ -38,9 +38,9 @@
         <div>
           <a href="#!" class="brand-logo"><i class="material-icons">stars</i>Prtify</a>
           <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons">menu</i></a>
-          <ul id='dropdown1' class='dropdown-content'>
+          <!-- <ul id='dropdown1' class='dropdown-content'>
             <li><a href="#!">Leave Party</a></li>
-          </ul>
+          </ul> -->
         </div>
       </li>
     </ul>
@@ -49,6 +49,7 @@
 
 <body>
   <div class="container">
+<<<<<<< HEAD
       <nav class="transparent z-depth-0">
           <div class="nav-wrapper">
               <form action"" method="POST" id="searchForm">
@@ -61,17 +62,35 @@
               </form>
           </div>
       </nav>
+=======
+    <nav class="transparent z-depth-0">
+      <div class="nav-wrapper">
+        <form>
+          <div class="input-field col s6 offset-s2">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <button id="searchButton" class="btn waves-effect waves-light center" type="submit" name="action">Search
+          <i class="material-icons right"></i>
+      </button>
+>>>>>>> 613f01482aacc64523223290293d29cc290b1880
   </div>
   <div class="container">
     <h2 class="center white-text" id="headerQueue">Queue</h2>
     <ul class="collection" id="queue">
     </ul>
   </div>
-    <div class="container">
-        <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="modalClicked()">Modal</a>
-    </div>
+  <div class="container">
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="modalClicked()">Modal</a>
+  </div>
 
+<<<<<<< HEAD
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
@@ -82,11 +101,53 @@
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
         </div>
+=======
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+>>>>>>> 613f01482aacc64523223290293d29cc290b1880
     </div>
+    <h4>Results</h4>
+    <div id="result">
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="images/yuna.jpg" alt="" class="circle">
+          <span class="title">Title</span>
+          <p>First Line <br> Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">add</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle">folder</i>
+          <span class="title">Title</span>
+          <p>First Line <br> Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">add</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle green">insert_chart</i>
+          <span class="title">Title</span>
+          <p>First Line <br> Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">add</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <span class="title">Title</span>
+          <p>First Line <br> Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">add</i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+  </div>
 
-    <div class="container">
-        <a class="waves-effect waves-light btn" onclick="toastClicked()">Toast</a>
-    </div>
+  <div class="container">
+    <a class="waves-effect waves-light btn" onclick="toastClicked()">Toast</a>
+  </div>
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="materialize.min.js"></script>
