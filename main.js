@@ -98,25 +98,25 @@ setTimeout(function() {
 
 
       var down = document.getElementById(songList[n].name);
-      up.addEventListener("click", function() {
+      down.addEventListener("click", function() {
         var json = getJson();
         listenSong = $(this).attr('id');
         console.log(json.parties[party].queue[listenSong]);
-        var downvotes = json.parties[party].queue[listenSong].downvotes - 1;
-        var upvotes = json.parties[party].queue[listenSong].upvotes + 1;
+        var upvotes = json.parties[party].queue[listenSong].upvotes - 1;
+        var downvotes = json.parties[party].queue[listenSong].downvotes + 1;
         var alreadyVoted = false;
-        for (u in json.parties[party].queue[listenSong].upvoted) {
-          if (json.parties[party].queue[listenSong].upvoted[u].uid == uid) {
-            alreadyVoted = true;
-          }
-        }
         for (u in json.parties[party].queue[listenSong].downvoted) {
           if (json.parties[party].queue[listenSong].downvoted[u].uid == uid) {
             alreadyVoted = true;
+          }
+        }
+        for (u in json.parties[party].queue[listenSong].upvoted) {
+          if (json.parties[party].queue[listenSong].upvoted[u].uid == uid) {
+            alreadyVoted = true;
             firebase.database().ref("parties/" + party + "/queue/" + listenSong).update({
-              downvotes: downvotes
+              upvotes: upvotes
             });
-            firebase.database().ref("parties/" + party + "/queue/" + listenSong + "/downvoted/" + uid).remove()
+            firebase.database().ref("parties/" + party + "/queue/" + listenSong + "/upvoted/" + uid).remove()
               .then(function() {
                 console.log("sucess");
               })
@@ -128,9 +128,9 @@ setTimeout(function() {
         }
         if (!alreadyVoted) {
           firebase.database().ref("parties/" + party + "/queue/" + listenSong).update({
-            upvotes: upvotes
+            downvotes: downvotes
           });
-          firebase.database().ref("parties/" + party + "/queue/" + listenSong + "/upvoted/" + uid).update({
+          firebase.database().ref("parties/" + party + "/queue/" + listenSong + "/downvoted/" + uid).update({
             uid: uid
           });
         }
@@ -139,45 +139,6 @@ setTimeout(function() {
     }
   });
 }, 500);
-
-// function upvote(song) {
-//   alert("upvote");
-//   var json = getJson();
-//   console.log(song);
-//   var downvotes = json.parties[party].queue[song].downvotes - 1;
-//   var upvotes = json.parties[party].queue[song].upvotes + 1;
-//   var alreadyVoted = false;
-//   for (u in json.parties[party].queue[song].upvoted) {
-//     if (json.parties[party].queue[song].upvoted[u].uid == uid) {
-//       alreadyVoted = true;
-//     }
-//   }
-//   for (u in json.parties[party].queue[song].downvoted) {
-//     if (json.parties[party].queue[song].downvoted[u].uid == uid) {
-//       alreadyVoted = true;
-//       firebase.database().ref("parties/" + party + "/queue/" + song).update({
-//         downvotes: downvotes
-//       });
-//       firebase.database().ref("parties/" + party + "/queue/" + song + "/downvoted/" + uid).remove()
-//         .then(function() {
-//           console.log("sucess");
-//         })
-//         .catch(function(error) {
-//           console.log("Remove failed: " + error.message)
-//         });
-//       alreadyVoted = false;
-//     }
-//   }
-//   if (!alreadyVoted) {
-//     firebase.database().ref("parties/" + party + "/queue/" + song).update({
-//       upvotes: upvotes
-//     });
-//     firebase.database().ref("parties/" + party + "/queue/" + song + "/upvoted/" + uid).update({
-//       uid: uid
-//     });
-//   }
-//
-// }
 
 function downvote(song) {
   var json = getJson();
