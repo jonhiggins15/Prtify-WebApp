@@ -1,9 +1,11 @@
 /**
  * Created by satya on 11/5/17.
  */
-function modalClicked() {
-$('#modal1').modal('open');
-}
+
+// function modalClicked() {
+//   $('#modal1').modal('open');
+//   httpGet();
+// }
 
 function toastClicked() {
     var $toastContent = $('<span>New Song Added!</span>').add($('<button class="btn-flat toast-action" onclick="scrollToBottom()">Scroll to Bottom</button>'));

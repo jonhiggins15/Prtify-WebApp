@@ -31,7 +31,11 @@ setTimeout(function() {
     }
     songList.sort();
     songList.sort(function(a, b) {
-      return b.total - a.total;
+      var x = b.total - a.total;
+      firebase.database().ref("parties/" + party + "/queue/" + song).update({
+        absolute: x
+      });
+      return x;
     });
     $('#queue').empty();
     for (var n in songList) {
