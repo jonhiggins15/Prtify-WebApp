@@ -14,7 +14,10 @@ input, select, textarea {
     font-weight: bold;
 }
 
-#searchButton {
-    margin:0 auto;
-    display:block;
-}
+/*#searchButton {*/
+    /*margin:0 auto;*/
+    /*display:block;*/
+/*}*/
+
+#element1 {display:inline-block;margin-right:10px;}
+#element2 {display:inline-block;}
