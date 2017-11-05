@@ -4,8 +4,10 @@
 <head>
   <title>Partify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="viewport" type="text/css" href="main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
   <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -19,29 +21,26 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
-  <!-- <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script> -->
-  <script src="main.js"></script>
-  <script src="lastfmSearch.js"></script>
 </head>
 <header>
-
+    <nav class="green lighten-1">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Party Name</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+                <li><a href="index.html">Leave Party</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
 <body>
-  <div>
-    <p>
-      Search for a song:
-    </p>
-    <input type="text" name="songName">
-    <a class="btn" value="submit" onclick="httpGet()">Submit</a>
-    <div id="result">
-    </div>
 
-    </form>
-  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="materialize.min.js"></script>
+  <!--<script src="main.js"></script>-->
+  <script src="lastfmSearch.js"></script>
 
 </body>
 
