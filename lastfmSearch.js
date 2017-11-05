@@ -51,6 +51,9 @@ function httpGet(){
         // $('#result').append('<a id='+counter+' >'+'</a>');
         var y = JSON.stringify(item);
         console.log(y);
+        parsed.forEach(function(obj){
+          var string = obj['#text']
+        })
 
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+
@@ -66,6 +69,8 @@ function httpGet(){
               name: item.name,
               artist: item.artist,
           });
+          var $toastContent = $('<span>New Song!</span>').add($('<button class="btn-flat toast-action" onclick="scrollToBottom()">Scroll to Bottom</button>'));
+          Materialize.toast($toastContent, 4000, 'rounded');
 
         });
         counter = counter + 1;
