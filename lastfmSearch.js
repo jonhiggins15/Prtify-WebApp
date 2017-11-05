@@ -16,11 +16,13 @@ firebase.auth().onAuthStateChanged(function(user) {
   authDone = true;
 });
 
-$('.modal').modal();
-
-function httpGet(){
-  console.log("hi");
+function modalClicked() {
   $('#modal1').modal('open');
+  httpGet();
+}
+
+function httpGets(){
+  console.log("hi");
 
   var songName = $("#search").val();
   console.log(songName);
@@ -35,19 +37,15 @@ function httpGet(){
         console.log(counter);
         $('#result').append('<p>'+'<a id='+counter+' >'+ item.name +'</a>'+'</p>');
 
-        $('#result').append('<ul class="collection">'
-        '<li class="collection-item avatar">'
-            '<img src="images/yuna.jpg" alt="" class="circle">'
-            '<span class="title">'+item.name+'</span>'
-            '<p>'First Line '<br>'
-                Second Line
-            '</p>'
-            '<a href="#!" class="secondary-content">''<i class="material-icons">'+add+'</i>''</a>' \
-        '</li>'
+        $('#result').append('<ul class="collection">'+
+        '<li class="collection-item avatar">'+
+            '<img src="images/yuna.jpg" alt="" class="circle">'+
+            '<span class="title">'+item.name+'</span>'+
+            '<p>'+item.name+ '<br>'+
+                +item.name+
+            '</p>'+
+        '</li>'+
       '</ul>');
-
-
-
 
         var x = document.getElementById(counter);
         x.addEventListener("click", function(){
@@ -60,4 +58,6 @@ function httpGet(){
         counter = counter + 1;
     });
   });
+  // $('#modal1').modal('open');
 }
+  $('.modal').modal();
