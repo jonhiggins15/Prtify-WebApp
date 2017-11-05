@@ -38,7 +38,11 @@ function httpGet(){
   var url = "http://ws.audioscrobbler.com/2.0/?method=track.search&track="+songName+"&api_key=a1628eee06b5e44c3e2ba48cf52f07c7&limit=5&format=json"
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", url, false);
+
+  setTimeout(() =>{}, 1500);
+
   xmlHttp.send(null);
+
 
   // var r = JSON.parse(xmlHttp, results);
   $.getJSON(url, function(data){
@@ -49,11 +53,6 @@ function httpGet(){
         // console.log(artistArr[counter]);
         console.log(counter);
         // $('#result').append('<a id='+counter+' >'+'</a>');
-        var y = JSON.stringify(item);
-        console.log(y);
-        parsed.forEach(function(obj){
-          var string = obj['#text']
-        })
 
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+
