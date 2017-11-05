@@ -49,7 +49,8 @@ function httpGet(){
         // console.log(artistArr[counter]);
         console.log(counter);
         // $('#result').append('<a id='+counter+' >'+'</a>');
-
+        var y = JSON.stringify(item);
+        console.log(y);
 
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+

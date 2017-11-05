@@ -38,7 +38,7 @@ setTimeout(function() {
       // console.log(info[curr]);
       console.log(info);
       firebase.database().ref("parties/" + party + "/queue/" + info[curr].key).update({
-        total: info[curr].total
+        votes: info[curr].total
       });
     }
     $('#queue').empty();
