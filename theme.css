@@ -1,5 +1,5 @@
 body{
-  background-color: black;
+  background-color: #37474f;
 }
 
 header{
@@ -37,4 +37,9 @@ header{
 .p{
   color: white;
   font-weight: bold
+}
+
+input, select, textarea {
+    color: white;
+    font-weight: bold;
 }

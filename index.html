@@ -29,18 +29,26 @@
 </head>
 
 <body>
-  <header id="test">
+  <header id="Title">
     Prtify
   </header>
 
-  <div class="wrapper">
-  <p class="p">
-    Party Name:
-  </p><br>
-  <input type="text" name="partyName" id="partyName"><br>
-  <a class="btn" id="submit" value="submit" onclick="buttonClick()">Submit</a>
-  <p hidden="true" id="invalidParty">Please enter valid party</p>
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s4 offset-s4">
+          <input placeholder="Party Name" id="partyName" type="text" class="validate center">
+        </div>
+      </div>
+     <div class="row">
+        <div class="center">
+            <button id="submit" type="submit" value="Submit">Enter</button>
+        </div>
+     </div>
+    </form>
   </div>
+
 </body>
 
 
