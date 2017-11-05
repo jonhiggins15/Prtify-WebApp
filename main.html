@@ -60,47 +60,31 @@
   <div class="container">
     <h2 class="center white-text" id="headerQueue">Queue</h2>
     <ul class="collection" id="queue">
-      <li class="collection-item avatar">
-        <img src="" alt="" class="circle">
-        <span class="title"><b>Hello</b></span>
-        <p>Album: 25 <br> Artist: Adelle <br>
-        </p>
-        <a href="#!" class="secondary-content">
-          <div>
-            <div>
-              <i class="material-icons" style="opacity: 0.5">arrow_upward</i><i class="material-icons" style="opacity: 0.5">arrow_downward</i>
-            </div>
-            <div>
-              <p class="center" style="font-size: large"><b>7</b></p>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="collection-item avatar">
-        <i class="material-icons circle">folder</i>
-        <span class="title"><b>Track 2</b></span>
-        <p>Album: <br> Artist: <br>
-        </p>
-        <a href="#!" class="secondary-content"><i class="material-icons">arrow_upward</i><i class="material-icons">arrow_downward</i></a>
-      </li>
-      <li class="collection-item avatar">
-        <i class="material-icons circle green">insert_chart</i>
-        <span class="title"><b>Track 3</b></span>
-        <p>Album: <br> Artist: <br>
-        </p>
-        <a href="#!" class="secondary-content"><i class="material-icons">arrow_upward</i><i class="material-icons">arrow_downward</i></a>
-      </li>
-      <li class="collection-item avatar">
-        <i class="material-icons circle red">play_arrow</i>
-        <span class="title"><b>Track 4</b></span>
-        <p>Album: <br> Artist: <br>
-        </p>
-        <a href="#!" class="secondary-content"><i class="material-icons">arrow_upward</i><i class="material-icons">arrow_downward</i></a>
-      </li>
     </ul>
-
   </div>
 
+    <div class="container">
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="modalClicked()">Modal</a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <a class="waves-effect waves-light btn" onclick="toastClicked()">Toast</a>
+    </div>
+
+
+  <script src="modalandToast.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="materialize.min.js"></script>
   <script src="main.js"></script>
