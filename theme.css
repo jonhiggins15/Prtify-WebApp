@@ -2,41 +2,11 @@ body{
   background-color: #37474f;
 }
 
-header{
+#header{
   text-align: center;
   font-size: 100px;
   font-weight: bold;
   color: white;
-}
-.wrapper{
-  text-align: center;
-}
-
- #submit:hover{
-   background-position: right;
- }
-
-#submit {
-  /*position: absolute;*/
-  font-family: Roboto,sans-serif;
-  flex: 1 1 auto;
-  /*margin: 10px;*/
-  padding: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: black;
-  /*box-shadow: 0 0 20px #eee;*/
-  border-radius: 10px;
-  line-height: 0px;
-  font-size: 20px;
-  background-image: linear-gradient(to right, #35f261 0%, #8fd3f4 60%, #35f261 100%);
-}
-
-.p{
-  color: white;
-  font-weight: bold
 }
 
 input, select, textarea {

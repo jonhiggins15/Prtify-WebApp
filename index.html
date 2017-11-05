@@ -3,7 +3,9 @@
 <head>
   <title>Partify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
   <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -17,21 +19,11 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script src="anonAuth.js"></script>
-  <script src="index.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script> -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="theme.css">
 </head>
 
 <body>
-  <header id="Title">
-    Prtify
-  </header>
+
+  <h1 id="header">Prtify</h1>
 
 
   <div class="row">
@@ -43,12 +35,16 @@
       </div>
      <div class="row">
         <div class="center">
-            <button id="submit" type="submit" value="Submit">Enter</button>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Enter</button>
         </div>
      </div>
     </form>
   </div>
 
+  <script src="anonAuth.js"></script>
+  <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="materialize.min.js"></script>
 </body>
 
 
