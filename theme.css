@@ -13,3 +13,8 @@ input, select, textarea {
     color: white;
     font-weight: bold;
 }
+
+#searchButton {
+    margin:0 auto;
+    display:block;
+}
