@@ -51,10 +51,10 @@ function httpGet(){
     $.each(data.results.trackmatches.track, function(i, item){
       // if($.inArray(item.artist, artistArr)){
         // $('#result').append('<a id='+counter+' >'+'</a>');
-
+        // var string = '[{"#text"}]'
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+
-            '<img src='+item.image+' alt="" class="circle">'+
+            '<img src='+item.image[0]['#text']+' alt="" class="circle">'+
             '<span class="title"><b>'+item.name+'</b></span>'+
             '<p>'+item.artist+'<t>'+'<a href="#!" class="secondary-content">'+'<i id='+counter+' class="material-icons">add</i>'+'</a>'+
         '</li>'+
