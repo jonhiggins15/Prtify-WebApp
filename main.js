@@ -35,8 +35,6 @@ setTimeout(function() {
       return x;
     });
     for(var curr in info){
-      // console.log(info[curr]);
-      console.log(info);
       firebase.database().ref("parties/" + party + "/queue/" + info[curr].key).update({
         votes: info[curr].total
       });
@@ -126,7 +124,6 @@ setTimeout(function() {
       down.addEventListener("click", function() {
         var json = getJson();
         listenSong = $(this).attr('id');
-        console.log(json.parties[party].queue[listenSong]);
         var upvotes = json.parties[party].queue[listenSong].upvotes - 1;
         var downvotes = json.parties[party].queue[listenSong].downvotes + 1;
         var alreadyVoted = false;
