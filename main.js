@@ -24,7 +24,7 @@ setTimeout(function() {
   var partyRef = firebase.database().ref('parties/' + party + '/queue');
   partyRef.on('value', function(snapshot) {
     var info = snapshot.val();
-    var songList = []
+    var songList = [];
     for (var song in info) {
       info[song].total = info[song].upvotes - info[song].downvotes;
       songList.push(info[song]);
