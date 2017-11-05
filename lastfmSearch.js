@@ -19,6 +19,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function httpGet(){
+  
   var songName = $("#songName").val();
   var url = "http://ws.audioscrobbler.com/2.0/?method=track.search&track="+songName+"&api_key=a1628eee06b5e44c3e2ba48cf52f07c7&format=json"
   var xmlHttp = new XMLHttpRequest();
