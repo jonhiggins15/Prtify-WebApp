@@ -32,18 +32,22 @@ setTimeout(function() {
     songList.sort();
     songList.sort(function(a, b) {
       var x = b.total - a.total;
-      firebase.database().ref("parties/" + party + "/queue/" + song).update({
-        absolute: x
-      });
       return x;
     });
     for(var curr in info){
-      firebase.database().ref("parties/" + party + "/queue/" + listenSong).update({
+      firebase.database().ref("parties/" + party + "/queue/" + info[curr].key).update({
         total: info[curr].total
       });
     }
     $('#queue').empty();
     for (var n in songList) {
+      var gaveUp = "0.5";
+      var gaveDown = "0.5";
+      if(songList[n].upvoted != null && uid in songList[n].upvoted){
+        gaveUp = "1";
+      }else if (songList[n].downvoted != null && uid in songList[n].downvoted) {
+        gaveDown = "1";
+      }
       // $("#queue").append('<li><p>'+songList[n].name+'</p><p>'+songList[n].artist+'</p><p>'+songList[n].image+'</p><button value="'+songList[n].name+'" onclick="upvote(this.value)">Upvote</button><button value="'+songList[n].name+'" onclick="downvote(this.value)">Downvote</button></li>');
       $('#queue').append('<li class="collection-item avatar"> \
         <img src="' + songList[n].image + '" alt="" class="circle"> \
@@ -53,7 +57,7 @@ setTimeout(function() {
         <a href="#!" class="secondary-content"> \
           <div> \
             <div> \
-              <i class="material-icons" style="opacity: 0.5" value="up" id="' + songList[n].name+"up" + '" >arrow_upward</i><i class="material-icons" value="' + songList[n].name + '" id="' + songList[n].name + '" style="opacity: 0.5">arrow_downward</i> \
+              <i class="material-icons" style="opacity: '+gaveUp+'" value="up" id="' + songList[n].key+"up" + '" >arrow_upward</i><i class="material-icons" value="' + songList[n].name + '" id="' + songList[n].key + '" style="opacity: '+gaveDown+'">arrow_downward</i> \
             </div> \
             <div> \
               <p class="center" style="font-size: large"><b>' + songList[n].total + '</b></p> \
@@ -61,12 +65,11 @@ setTimeout(function() {
           </div> \
         </a> \
       </li>');
-      var up = document.getElementById(songList[n].name+"up");
+      var up = document.getElementById(songList[n].key+"up");
       up.addEventListener("click", function() {
         var json = getJson();
         listenSong = $(this).attr('id');
         listenSong = listenSong.slice(0,-2);
-        alert(json.parties[party].queue[listenSong].downvotes);
         var downvotes = json.parties[party].queue[listenSong].downvotes - 1;
         var upvotes = json.parties[party].queue[listenSong].upvotes + 1;
         var alreadyVoted = false;
@@ -106,7 +109,7 @@ setTimeout(function() {
 
 
 
-      var down = document.getElementById(songList[n].name);
+      var down = document.getElementById(songList[n].key);
       down.addEventListener("click", function() {
         var json = getJson();
         listenSong = $(this).attr('id');
