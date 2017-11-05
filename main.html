@@ -23,19 +23,87 @@
   </script>
 </head>
 <header>
-    <nav class="green lighten-1">
+    <nav class="teal accent-4 hide-on-med-and-down">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Party Name</a>
+            <a href="#!" class="brand-logo"><i class="material-icons">stars</i>Prtify</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html"><i class="material-icons">search</i></a></li>
                 <li><a href="index.html">Leave Party</a></li>
             </ul>
         </div>
     </nav>
+
+    <nav class="hide-on-med-and-up teal accent-4">
+        <ul>
+            <li>
+                <div>
+                    <a href="#!" class="brand-logo"><i class="material-icons">stars</i>Prtify</a>
+                    <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons">menu</i></a>
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">Leave Party</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
 </header>
 
 <body>
+    <div class="container">
+        <form>
+            <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <h2 class="center white-text">Queue</h2>
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <img src="" alt="" class="circle">
+                <span class="title"><b>Hello</b></span>
+                <p>Album: 25 <br>
+                    Artist: Adelle <br>
+                </p>
+                <a href="#!" class="secondary-content">
+                <div>
+                    <div>
+                        <i class="material-icons" style="opacity: 0.5">arrow_upward</i><i class="material-icons" style="opacity: 0.5">arrow_downward</i>
+                    </div>
+                    <div>
+                        <p class="center" style="font-size: large"><b>7</b></p>
+                    </div>
+                </div>
+                </a>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle">folder</i>
+                <span class="title"><b>Track 2</b></span>
+                <p>Album: <br>
+                    Artist: <br>
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">arrow_upward</i><i class="material-icons">arrow_downward</i></a>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle green">insert_chart</i>
+                <span class="title"><b>Track 3</b></span>
+                <p>Album: <br>
+                    Artist: <br>
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">arrow_upward</i><i class="material-icons">arrow_downward</i></a>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle red">play_arrow</i>
+                <span class="title"><b>Track 4</b></span>
+                <p>Album: <br>
+                    Artist: <br>
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">arrow_upward</i><i class="material-icons">arrow_downward</i></a>
+            </li>
+        </ul>
 
+    </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="materialize.min.js"></script>
