@@ -101,6 +101,17 @@ setTimeout(function() {
           firebase.database().ref("parties/" + party + "/queue/" + listenSong + "/upvoted/" + uid).update({
             uid: uid
           });
+        }else{
+          firebase.database().ref("parties/" + party + "/queue/" + listenSong).update({
+            upvotes: upvotes - 2
+          });
+          firebase.database().ref("parties/" + party + "/queue/" + listenSong + "/upvoted/" + uid).remove()
+            .then(function() {
+              console.log("sucess");
+            })
+            .catch(function(error) {
+              console.log("Remove failed: " + error.message)
+            });
         }
 
       });
@@ -145,6 +156,17 @@ setTimeout(function() {
           firebase.database().ref("parties/" + party + "/queue/" + listenSong + "/downvoted/" + uid).update({
             uid: uid
           });
+        }else{
+          firebase.database().ref("parties/" + party + "/queue/" + listenSong).update({
+            downvotes: downvotes - 2
+          });
+          firebase.database().ref("parties/" + party + "/queue/" + listenSong + "/downvoted/" + uid).remove()
+            .then(function() {
+              console.log("sucess");
+            })
+            .catch(function(error) {
+              console.log("Remove failed: " + error.message)
+            });
         }
 
       });
