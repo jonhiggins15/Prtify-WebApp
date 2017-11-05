@@ -21,7 +21,6 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script type="text/javascript" src="lastfmSearch.js"></script>
 </head>
 <header>
   <nav class="teal accent-4 hide-on-med-and-down">
@@ -50,17 +49,21 @@
 
 <body>
   <div class="container">
-  <nav class="transparent z-depth-0">
-  <div class="nav-wrapper">
-      <form onsubmit="httpGet()">
-          <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
+      <nav class="transparent z-depth-0">
+          <div class="nav-wrapper">
+              <form>
+                  <div class="input-field col s6 offset-s2">
+                      <input id="search" type="search" required>
+                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                      <i class="material-icons">close</i>
+                  </div>
+              </form>
           </div>
-      </form>
-  </div>
-  </nav>
+      </nav>
+
+      <button id="searchButton" class="btn waves-effect waves-light center" type="submit" name="action">Search
+          <i class="material-icons right"></i>
+      </button>
   </div>
   <div class="container">
     <h2 class="center white-text" id="headerQueue">Queue</h2>
@@ -126,6 +129,7 @@
   <script src="materialize.min.js"></script>
   <script src="modalandToast.js"></script>
   <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="lastfmSearch.js"></script>
 
 </body>
 

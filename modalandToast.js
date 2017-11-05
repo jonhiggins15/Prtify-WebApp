@@ -13,5 +13,3 @@ function scrollToBottom() {
     toastInstance.remove();
     window.scrollTo(0,document.body.scrollHeight);
 }
-
-$('.modal').modal();

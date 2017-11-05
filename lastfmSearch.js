@@ -1,6 +1,10 @@
 var authDone = false;
 var party;
 //
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+});
 
 firebase.auth().onAuthStateChanged(function(user) {
   var isAnonymous = user.isAnonymous;
@@ -16,14 +20,24 @@ firebase.auth().onAuthStateChanged(function(user) {
   authDone = true;
 });
 
+<<<<<<< HEAD
 function modalClicked() {
   $('#modal1').modal('open');
   httpGet();
 }
+=======
+
+function modalClicked() {
+    $('#modal1').modal('open');
+};
+>>>>>>> b9dcd3b4e9b746ec0e58e87b5a308247df73cdbe
 
 function httpGets(){
   console.log("hi");
+<<<<<<< HEAD
 
+=======
+>>>>>>> b9dcd3b4e9b746ec0e58e87b5a308247df73cdbe
   var songName = $("#search").val();
   console.log(songName);
   var url = "http://ws.audioscrobbler.com/2.0/?method=track.search&track="+songName+"&api_key=a1628eee06b5e44c3e2ba48cf52f07c7&limit=5&format=json"
@@ -37,6 +51,7 @@ function httpGets(){
         console.log(counter);
         $('#result').append('<p>'+'<a id='+counter+' >'+ item.name +'</a>'+'</p>');
 
+<<<<<<< HEAD
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+
             '<img src="images/yuna.jpg" alt="" class="circle">'+
@@ -46,6 +61,18 @@ function httpGets(){
             '</p>'+
         '</li>'+
       '</ul>');
+=======
+      //   $('#result').append('<ul class="collection">'\
+      //   '<li class="collection-item avatar">'\
+      //       '<img src="images/yuna.jpg" alt="" class="circle">'\
+      //       '<span class="title">'+item.name+'</span>'\
+      //       '<p>'First Line '<br>'\
+      //           Second Line\
+      //       '</p>'\
+      //       '<a href="#!" class="secondary-content">''<i class="material-icons">'+add+'</i>';'</a>' \
+      //   '</li>'
+      // '</ul>');
+>>>>>>> b9dcd3b4e9b746ec0e58e87b5a308247df73cdbe
 
         var x = document.getElementById(counter);
         x.addEventListener("click", function(){
