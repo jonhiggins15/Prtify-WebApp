@@ -55,7 +55,7 @@ function httpGet(){
         '<li class="collection-item avatar">'+
             '<img src='+item.image.text+' alt="" class="circle">'+
             '<span class="title">'+item.name+'</span>'+
-            '<p>'+item.artist+'<t>'+'<button id="s"'
+            '<p>'+item.artist+'<t>'+'<button id="buttonn">'+
         '</li>'+
       '</ul>');
 
