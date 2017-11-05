@@ -6,6 +6,15 @@ $(document).ready(function(){
     $('.modal').modal();
 });
 
+$("#searchForm").submit(function(event){
+  $('#modal1').modal('open');
+  httpGet();
+  event.preventDefault();
+});
+
+var authDone = false;
+var party;
+
 firebase.auth().onAuthStateChanged(function(user) {
   var isAnonymous = user.isAnonymous;
   uid = user.uid;
@@ -17,64 +26,40 @@ firebase.auth().onAuthStateChanged(function(user) {
       found = true;
     }
   }
+  // if (!found) {
+  // window.location.assign('index.html');
+  // }
   authDone = true;
 });
 
-<<<<<<< HEAD
-function modalClicked() {
-  $('#modal1').modal('open');
-  httpGet();
-}
-=======
+function httpGet(){
 
-function modalClicked() {
-    $('#modal1').modal('open');
-};
->>>>>>> b9dcd3b4e9b746ec0e58e87b5a308247df73cdbe
-
-function httpGets(){
-  console.log("hi");
-<<<<<<< HEAD
-
-=======
->>>>>>> b9dcd3b4e9b746ec0e58e87b5a308247df73cdbe
   var songName = $("#search").val();
-  console.log(songName);
   var url = "http://ws.audioscrobbler.com/2.0/?method=track.search&track="+songName+"&api_key=a1628eee06b5e44c3e2ba48cf52f07c7&limit=5&format=json"
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", url, false);
   xmlHttp.send(null);
 
+  // var r = JSON.parse(xmlHttp, results);
   $.getJSON(url, function(data){
+    // var artistArr = [10];
     var counter = 0;
     $.each(data.results.trackmatches.track, function(i, item){
+      // if($.inArray(item.artist, artistArr)){
+        // console.log(artistArr[counter]);
         console.log(counter);
-        $('#result').append('<p>'+'<a id='+counter+' >'+ item.name +'</a>'+'</p>');
+        $('#result').append('<a id='+counter+' >'+'</a>');
+        var x = document.getElementById(counter);
 
-<<<<<<< HEAD
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+
-            '<img src="images/yuna.jpg" alt="" class="circle">'+
+            '<img src='+item.image.text+' alt="" class="circle">'+
             '<span class="title">'+item.name+'</span>'+
-            '<p>'+item.name+ '<br>'+
-                +item.name+
-            '</p>'+
+            '<p>'+item.artist+'<t>'+'<button id="s"'
         '</li>'+
       '</ul>');
-=======
-      //   $('#result').append('<ul class="collection">'\
-      //   '<li class="collection-item avatar">'\
-      //       '<img src="images/yuna.jpg" alt="" class="circle">'\
-      //       '<span class="title">'+item.name+'</span>'\
-      //       '<p>'First Line '<br>'\
-      //           Second Line\
-      //       '</p>'\
-      //       '<a href="#!" class="secondary-content">''<i class="material-icons">'+add+'</i>';'</a>' \
-      //   '</li>'
-      // '</ul>');
->>>>>>> b9dcd3b4e9b746ec0e58e87b5a308247df73cdbe
 
-        var x = document.getElementById(counter);
+
         x.addEventListener("click", function(){
             firebase.database().ref("parties/"+party+"/requests/"+item.mbid).update({
               name: item.name,
@@ -83,8 +68,17 @@ function httpGets(){
 
         });
         counter = counter + 1;
+      // console.log(item);
+      // }
+      // artistArr[counter] = item.artist;
     });
+    // $('#result').append(html);
   });
-  // $('#modal1').modal('open');
 }
-  $('.modal').modal();
+
+// function test(item){
+//   console.log(item);
+//   firebase.database().ref("parties/"+party+"/requests/"+item).update({
+//     name: item
+//   })
+// }
