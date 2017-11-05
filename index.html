@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html ng-app "app">
-
+<html>
 <head>
   <title>Partify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="viewport" type="text/css" href="theme.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
   <script>
@@ -21,24 +19,28 @@
   </script>
   <script src="anonAuth.js"></script>
   <script src="index.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="theme.css">
 </head>
 
 <body>
-  <header>
-    <div ng-controller "testController" id="heading">
-
-    </div>
-
+  <header id="test">
+    Prtify
   </header>
 
-
-  Party Name:<br>
+  <div class="wrapper">
+  <p class="p">
+    Party Name:
+  </p><br>
   <input type="text" name="partyName" id="partyName"><br>
-  <input type="submit" value="Submit" id="signInButton" onclick="buttonClick()">
+  <a class="btn" id="submit" value="submit" onclick="buttonClick()">Submit</a>
   <p hidden="true" id="invalidParty">Please enter valid party</p>
+  </div>
 </body>
 
 
