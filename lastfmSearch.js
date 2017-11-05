@@ -53,7 +53,7 @@ function httpGet(){
 
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+
-            '<img src='+item.image['#text']+' alt="" class="circle">'+
+            '<img src='+item.image+' alt="" class="circle">'+
             '<span class="title">'+item.name+'</span>'+
             '<p>'+item.artist+'<t>'+'<a href="#!" class="secondary-content">'+'<i id='+counter+' class="material-icons">add</i>'+'</a>'+
         '</li>'+
