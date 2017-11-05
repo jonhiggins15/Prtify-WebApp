@@ -37,6 +37,11 @@ setTimeout(function() {
       });
       return x;
     });
+    for(var curr in info){
+      firebase.database().ref("parties/" + party + "/queue/" + listenSong).update({
+        total: info[curr].total
+      });
+    }
     $('#queue').empty();
     for (var n in songList) {
       // $("#queue").append('<li><p>'+songList[n].name+'</p><p>'+songList[n].artist+'</p><p>'+songList[n].image+'</p><button value="'+songList[n].name+'" onclick="upvote(this.value)">Upvote</button><button value="'+songList[n].name+'" onclick="downvote(this.value)">Downvote</button></li>');

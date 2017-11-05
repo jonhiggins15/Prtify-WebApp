@@ -5,10 +5,11 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var isAnonymous = user.isAnonymous;
     uid = user.uid;
+    alert(uid);
     json = getJson();
     for(var u in json.users){
-      if(u == uid){
-        //window.location.assign('main.html');
+      if(u == uid && json.users[u].party != null){
+        window.location.assign('main.html');
       }
     }
   } else {
