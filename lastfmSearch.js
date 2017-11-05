@@ -33,7 +33,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function httpGet(){
-
+  $("#result").empty();
   var songName = $("#search").val();
   var url = "http://ws.audioscrobbler.com/2.0/?method=track.search&track="+songName+"&api_key=a1628eee06b5e44c3e2ba48cf52f07c7&limit=5&format=json"
   var xmlHttp = new XMLHttpRequest();
@@ -53,7 +53,7 @@ function httpGet(){
 
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+
-            '<img src='+item.image.text+' alt="" class="circle">'+
+            '<img src='+item.image['#text']+' alt="" class="circle">'+
             '<span class="title">'+item.name+'</span>'+
             '<p>'+item.artist+'<t>'+'<a href="#!" class="secondary-content">'+'<i id='+counter+' class="material-icons">add</i>'+'</a>'+
         '</li>'+

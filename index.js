@@ -5,7 +5,6 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var isAnonymous = user.isAnonymous;
     uid = user.uid;
-    alert(uid);
     json = getJson();
     for(var u in json.users){
       if(u == uid && json.users[u].party != null){
