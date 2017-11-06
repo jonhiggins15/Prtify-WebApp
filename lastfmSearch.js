@@ -39,7 +39,7 @@ function httpGet(){
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", url, false);
 
-  setTimeout(() =>{}, 1500);
+  setTimeout(() =>{}, 3000);
 
   xmlHttp.send(null);
 
@@ -52,6 +52,9 @@ function httpGet(){
       // if($.inArray(item.artist, artistArr)){
         // $('#result').append('<a id='+counter+' >'+'</a>');
         // var string = '[{"#text"}]'
+        if(item.mbid == ""){
+          item.mbid = Math.floor((Math.random()*3000)+1);
+        }
         $('#result').append('<ul class="collection">'+
         '<li class="collection-item avatar">'+
             '<img src='+item.image[0]['#text']+' alt="" class="circle">'+
