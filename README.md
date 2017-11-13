@@ -13,7 +13,7 @@ To use Prtify, the person who wants to start the party needs to download the And
 Next, they need to create a party and tell the party name to their friends.  Once the friends know the party name, they can go
 to prtify.com and join the party.  Now, everyone can find and add music to the queue, and listen to the songs they want.
 </br></br>
-To see the Github page for the Android app, go to <a href="https://github.com/ianleshan/Prtify-android</a>
+To see the Github page for the Android app, go to <a href="https://github.com/ianleshan/Prtify-android"></a>
 </br></br>
 Ben Seibold, Jon Higgens, Ian Leshan, and Satya Kranthi </br>
 <i>Hackathon 2017</i> 
