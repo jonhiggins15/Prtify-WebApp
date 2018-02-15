@@ -16,6 +16,20 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+function makeNewParty(){
+  var party = $("#partyName").val();
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+  xmlHttp.send( null );
+  response = xmlHttp.responseText
+}
+
+function httpGet(theUrl)
+{
+
+    return xmlHttp.responseText;
+}
+
 
 function buttonClick(){
   var party = $("#partyName").val();
