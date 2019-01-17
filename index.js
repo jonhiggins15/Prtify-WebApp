@@ -8,7 +8,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     json = getJson();
     for(var u in json.users){
       if(u == uid && json.users[u].party != null){
-        window.location.assign('main.html');
+        //window.location.assign('main.html');
       }
     }
   } else {
@@ -17,11 +17,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function makeNewParty(){
+  console.log("New Party");
   var party = $("#partyName").val();
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
   xmlHttp.send( null );
-  response = xmlHttp.responseText
+  response = xmlHttp.responseText;
+  console.log("Response: "+response);
+  console.log("New Party");
 }
 
 function httpGet(theUrl)
@@ -32,6 +35,7 @@ function httpGet(theUrl)
 
 
 function buttonClick(){
+  console.log("btn click");
   var party = $("#partyName").val();
   var json = getJson();
   var partyExists = false;
