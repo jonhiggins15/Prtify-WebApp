@@ -9,7 +9,7 @@ body{
   color: white;
 }
 
-input, select, textarea {
+select, textarea {
     color: white;
     font-weight: bold;
 }

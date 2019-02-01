@@ -17,22 +17,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function makeNewParty(){
-  console.log("New Party");
-  var party = $("#partyName").val();
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-  xmlHttp.send( null );
-  response = xmlHttp.responseText;
-  console.log("Response: "+response);
+  $('#create-party-modal').modal('open');
   console.log("New Party");
 }
 
-function httpGet(theUrl)
-{
-
-    return xmlHttp.responseText;
+function joinParty(){
+  $('#join-party-modal').modal('open');
 }
-
 
 function buttonClick(){
   console.log("btn click");
