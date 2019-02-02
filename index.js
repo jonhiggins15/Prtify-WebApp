@@ -16,16 +16,16 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-function makeNewParty(){
+function makeNewPartyModal(){
   $('#create-party-modal').modal('open');
   console.log("New Party");
 }
 
-function joinParty(){
+function joinPartyModal(){
   $('#join-party-modal').modal('open');
 }
 
-function buttonClick(){
+function joinParty(){
   console.log("btn click");
   var party = $("#partyName").val();
   var json = getJson();

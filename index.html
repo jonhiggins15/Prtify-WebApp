@@ -41,35 +41,41 @@
             <div class="modal-content">
               <h4>Start the Party</h4>
               <p>Party name: </p>
+
               <div class="input-field col s4 offset-s4">
                 <input placeholder="Party Name" autocomplete="off" id="partyName" type="text" class="validate center">
               </div>
+
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Create</a>
             </div>
+
           </div>
           <div id="join-party-modal" class="modal">
             <div class="modal-content">
               <h4>Join a Party</h4>
               <p>Party Name:</p>
+
               <div class="input-field col s4 offset-s4">
-                  <input placeholder="Party Name" autocomplete="off" id="partyName" type="text" class="validate center">
-                </div>
+                <input placeholder="Party Name" autocomplete="off" id="partyName" type="text" class="validate center">
+              </div>
+
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <button class="btn waves-effect waves-light" type="submit" name="action" onclick="joinParty()">Join</button>
             </div>
+
           </div>
 
           <div class="center">
             <div>
-              <button class="btn waves-effect waves-light" type="button" name="action" onclick="joinParty()">Join
+              <button class="btn waves-effect waves-light" type="button" name="action" onclick="joinPartyModal()">Join
                 Party</button>
             </div>
             <p class="center white-text">- OR -</p>
             <div>
-              <button class="btn waves-effect waves-light" type="button" name="action" onclick="makeNewParty()">Make
+              <button class="btn waves-effect waves-light" type="button" name="action" onclick="makeNewPartyModal()">Make
                 New Party</button>
             </div>
           </div>
