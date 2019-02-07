@@ -9,6 +9,16 @@ body{
   color: white;
 }
 
+#invalidParty{
+  color: red;
+  display: none;
+}
+
+#existingParty{
+  color: red;
+  display: none;
+}
+
 select, textarea {
     color: white;
     font-weight: bold;

@@ -18,7 +18,27 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function makeNewPartyModal(){
   $('#create-party-modal').modal('open');
-  console.log("New Party");
+}
+
+function makeNewParty(){
+  var party = $('#createInput').val();
+  // Check if room name is available
+  var json = getJson();
+
+  var exists = false;
+  for(var p in json.parties){
+    if(party == p){
+      console.log("This room already exists");
+      exists = true;
+      $("#existingParty").show();
+    }
+    
+  }
+  if(!exists){
+    // Redirect to url/room/userid
+    window.location = "http://localhost:8080/" + "auth/" + encodeURIComponent(party);
+  }
+  
 }
 
 function joinPartyModal(){
@@ -27,7 +47,7 @@ function joinPartyModal(){
 
 function joinParty(){
   console.log("btn click");
-  var party = $("#partyName").val();
+  var party = $("#joinInput").val();
   var json = getJson();
   var partyExists = false;
   for(var p in json.parties){
@@ -39,11 +59,10 @@ function joinParty(){
         uid: uid,
         party: party
       });
-      window.location.assign(main.html);
+      window.location = "main.html";
     }
   }
   $("#invalidParty").show();
-
 }
 
 //returns a JSON of the database using REST API

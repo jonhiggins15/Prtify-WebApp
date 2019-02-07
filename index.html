@@ -40,15 +40,14 @@
           <div id="create-party-modal" class="modal">
             <div class="modal-content">
               <h4>Start the Party</h4>
-              <p>Party name: </p>
-
+              <p id="existingParty">A party with this name already exists</p>
               <div class="input-field col s4 offset-s4">
-                <input placeholder="Party Name" autocomplete="off" id="partyName" type="text" class="validate center">
+                <input placeholder="Party Name" autocomplete="off" id="createInput" type="text" class="validate center">
               </div>
 
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Create</a>
+              <button class="btn waves-effect waves-light" type="button" name="action" onclick="makeNewParty()">Create</button>
             </div>
 
           </div>
@@ -57,13 +56,17 @@
               <h4>Join a Party</h4>
               <p>Party Name:</p>
 
+              <p id="invalidParty">That party does not exist</p>
+
               <div class="input-field col s4 offset-s4">
-                <input placeholder="Party Name" autocomplete="off" id="partyName" type="text" class="validate center">
+                <input placeholder="Party Name" autocomplete="off" id="joinInput" type="text" class="validate center">
+                
               </div>
 
             </div>
             <div class="modal-footer">
-                <button class="btn waves-effect waves-light" type="submit" name="action" onclick="joinParty()">Join</button>
+                <button class="btn waves-effect waves-light" type="button" name="action" onclick="joinParty()">Join</button>
+                
             </div>
 
           </div>
