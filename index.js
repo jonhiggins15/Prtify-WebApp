@@ -36,7 +36,8 @@ function makeNewParty(){
   }
   if(!exists){
     // Redirect to url/room/userid
-    window.location = "http://localhost:8080/" + "auth/" + encodeURIComponent(party);
+    console.log("Uid is: "+ uid);
+    window.location = "http://localhost:8080/" + "auth/" + encodeURIComponent(party) + "/" + uid;
   }
   
 }
